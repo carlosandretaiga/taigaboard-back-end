@@ -1,5 +1,5 @@
 import joi from 'joi';
-import { CreateUserData } from '../interfaces/authInterfaces';
+import { CreateUserData } from '../interfaces/userInterfaces.js';
 
 type CreateUserDataSignin = Omit<CreateUserData, "name" | "confirmPassword">;
 

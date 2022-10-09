@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import chalk from 'chalk';
-import { errorTypeToStatusCode, isAppError } from '../utils/errorHandlerUtils';
+import { errorTypeToStatusCode, isAppError } from '../utils/errorHandlerUtils.js';
 
 export function handleError(
   error,
