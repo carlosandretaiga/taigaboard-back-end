@@ -22,7 +22,7 @@ import {
   }
 
   const hashPassword = encrypt.bcrypt.encryptPassword(password);
-  const hashConfirmPassword = encrypt.bcrypt.encryptPassword(password);
+  const hashConfirmPassword = encrypt.bcrypt.encryptPassword(confirmPassword);
   const createdUser = await userRepository.register({
     name,
     email,
