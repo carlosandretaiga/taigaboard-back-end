@@ -1,8 +1,6 @@
 import multer from "multer";
-import path from "path";
+/* import path from "path";
 import crypto from "crypto";
-
-
 
 
 export const multerConfig = {
@@ -28,7 +26,7 @@ export const multerConfig = {
     fileSize: 10 * 1024 * 1024,
 
   },
-/*   fileFilter: (req, file, cb) => {
+   fileFilter: (req, file, cb) => {
     const allowedMimes = [
       "image/jpeg",
       "image/jpg",
@@ -43,5 +41,5 @@ export const multerConfig = {
     }
 
 
-  }, */
-};
+  }, 
+}; */

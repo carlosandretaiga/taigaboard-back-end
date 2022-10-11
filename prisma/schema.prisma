@@ -15,7 +15,6 @@ model User {
   name String 
   email String @unique
   password String
-  confirmPassword String
 
-  @@map("Users")
+  @@map("users")
 }

@@ -4,9 +4,9 @@ import * as userService from '../services/userService.js';
 
 
 export async function registerUser(req: Request, res: Response){
-  const { name, email, password, confirmPassword }: { name: string, email: string, password: string, confirmPassword: string } = req.body;
+  const { name, email, password }: { name: string, email: string, password: string } = req.body;
 
-  const createdUser = await userService.registerUser({ name, email, password, confirmPassword });
+  const createdUser = await userService.registerUser({ name, email, password });
 
   createdUser.password = password;
 

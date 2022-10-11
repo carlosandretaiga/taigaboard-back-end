@@ -1,5 +1,4 @@
 import jwt from 'jsonwebtoken';
-import { User } from '@prisma/client';
 import { CreateUserData } from '../interfaces/userInterfaces.js';
 
 type CreateUserDataLogin = Omit<CreateUserData, "name" | "confirmPassword">;
@@ -14,7 +13,7 @@ import {
   unautorizedError,
  } from '../utils/errorHandlerUtils.js';
 
- export async function registerUser({ name, email, password, confirmPassword }: CreateUserData){
+ export async function registerUser({ name, email, password }: CreateUserData){
   const userExists = await userRepository.findByEmail(email);
 
   if(userExists) {
@@ -22,12 +21,10 @@ import {
   }
 
   const hashPassword = encrypt.bcrypt.encryptPassword(password);
-  const hashConfirmPassword = encrypt.bcrypt.encryptPassword(confirmPassword);
   const createdUser = await userRepository.register({
     name,
     email,
     password: hashPassword,
-    confirmPassword: hashConfirmPassword,
   });
 
   return createdUser;
