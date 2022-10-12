@@ -1,0 +1,23 @@
+services:
+  db_taigaboard:
+    image: postgres
+    container_name: db_taigaboard
+    restart: always
+    ports: 
+      - 4433:5432
+    env_file:
+      - .env
+    volumes: 
+      - pg_taigaboard:/var/lib/postgresql/data
+
+  node_app_taigaboard:
+    container_name: taigaboard
+    build: . # no mesmo nível
+    ports:
+      - 4000:4000
+    depends_on:
+      - db_taigaboard
+    env_file:
+      - .env
+volumes:
+  pg_taigaboard:

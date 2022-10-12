@@ -1,0 +1,11 @@
+name: GitHub Actions Hello World TaigaBoard
+on: [push] #trigger
+jobs:
+  Hello-World:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Olá, mundo! Sou um teste de action"
+      - name: Check out repository code
+        uses: actions/checkout@v3 # copia os arquivos do projeto
+      - name: List files
+        run: ls ${{ github.workspace }}
