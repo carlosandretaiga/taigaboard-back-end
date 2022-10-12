@@ -5,10 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc ./dist",
-    "prisma:migrate": "prisma migrate dev",
-    "prisma:deploy": "prisma migrate deploy",
-    "prisma:seed": "prisma db seed",
+    "build": "tsc",
     "dev": "nodemon src/server.ts",
     "test": "dotenv -e .env.test prisma migrate dev && dotenv -e .env.test cross-env NODE_OPTIONS=--experimental-vm-modules jest -- -i",
     "start": "node dist/src/server.js"
